@@ -1,0 +1,18 @@
+{
+  "name": "apache-webpack-plugin",
+  "version": "0.1.0",
+  "description": "Start Apache via webpack-dev-server.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattscott2040/apache-webpack-plugin.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Scott",
+  "license": "ISC",
+  "dependencies": {
+    "apache-bridge": "^0.1.3"
+  }
+}
