@@ -3,7 +3,7 @@
 
 `apache-webpack-plugin` is a plugin for [webpack-dev-server](https://webpack.js.org/configuration/dev-server/) that starts your locally installed `Apache` web server when you run `webpack-dev-server`. This is not a replacement for Apache, so you must have Apache installed in order to use `apache-webpack-plugin` to connect.
 
-`apache-webpack-plugin` is built with [apache-bridge]().
+`apache-webpack-plugin` is built with [apache-bridge](https://github.com/mattscott2040/apache-bridge).
 
 ## Table of Contents
 
