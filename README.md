@@ -129,7 +129,7 @@ The domain name or IP address for the server. Defaults to `localhost`.
 
 - `<Function>` | `<Array>`
   - `server` `<apache_bridge.Server>`
-  - `plugin` `<ApacheWebServer>` Plugin instance.
+  - `plugin` `<ApacheWebpackPlugin>` Plugin instance. *Note*: This argument will be replaced by an instance of [Apache Connect](https://github.com/mattscott2040/apache-connect) in `v1.0.0` of `apache-webpack-plugin`.
   - `options` `<object>` Original options from `webpack.config.js`.
 
 A function (or array of functions) to be called after the `server` object is created but before Apache starts, to allow integrating libraries that need access to the server configuration.
