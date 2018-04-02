@@ -54,7 +54,7 @@ apacheWebpackPlugin.prototype.apply = function(compiler) {
     var self = this;
     compiler.plugin('done', function(c) {
         // If server is instantiated (only for webpack-dev-server)
-        if(self.server) {
+        if(self.server && !self.server.listening) {
             // Start Apache
             console.log('Starting Apache...');
             self.server.listen(self.port, self.hostname, function() {
