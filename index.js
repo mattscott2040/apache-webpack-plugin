@@ -20,6 +20,7 @@ function apacheWebpackPlugin(options) {
         
         this.server = apache.createServer();
         this.server.bin = options.bin; // Set bin directory
+        this.server._conf.file = options.conf; // Set conf file
 
         // Typecast as Array to allow multiple callbacks
         if(!Array.isArray(onCreateServer)) {

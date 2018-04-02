@@ -11,6 +11,7 @@
 * [Usage](#usage)
 * [Documentation](#documentation)
   * [apache.bin](#apachebin)
+  * [apache.conf](#apacheconf)
   * [apache.hostname](#apachehostname)
   * [apache.onCreateServer](#apacheoncreateserver)
   * [apache.port](#apacheport)
@@ -118,6 +119,12 @@ See `webpack-dev-server` [usage instructions](https://github.com/webpack/webpack
 - `<string>` Defaults to `''`.
 
 Set path to Apache `bin` directory where Apache `httpd` is located. This may be necessary if the path is not defined in your system's `$PATH` environment variable.
+
+#### apache.conf
+
+- `<string>` | `<boolean>` | `<null>`
+
+Boolean, string, or null value that indicates whether Apache should load its default `httpd.conf` file (`true`|`null`), another config file (`string` path to config file), or no config at all (`false`).
 
 #### apache.hostname
 
