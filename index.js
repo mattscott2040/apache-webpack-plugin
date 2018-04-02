@@ -57,6 +57,16 @@ apacheWebpackPlugin.prototype.apply = function(compiler) {
         if(self.server && !self.server.listening) {
             // Start Apache
             console.log('Starting Apache...');
+            function abort(err) {
+                process.exit(0);
+            }
+            self.server.once('error', abort);
+            self.server.on('listening', function() {
+                self.server.removeListener('error', abort);
+            })
+            self.server.on('close', function() {
+                self.server.removeListener('error', abort);
+            })
             self.server.listen(self.port, self.hostname, function() {
                 console.log('Apache is ready!');
             });
