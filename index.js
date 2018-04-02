@@ -22,6 +22,17 @@ function apacheWebpackPlugin(options) {
         this.server.bin = options.bin; // Set bin directory
         this.server._conf.file = options.conf; // Set conf file
 
+        // Log errors
+        this.server.on('error', function (err) {
+            console.log(err.toString());
+        });
+
+        // Trigger exit if Apache closes
+        this.server.on('close', function () {
+            console.log('Apache stopped.');
+            process.exit(0);
+        });
+
         // Typecast as Array to allow multiple callbacks
         if(!Array.isArray(onCreateServer)) {
             onCreateServer = [onCreateServer];
@@ -44,15 +55,6 @@ apacheWebpackPlugin.prototype.apply = function(compiler) {
     compiler.plugin('done', function(c) {
         // If server is instantiated (only for webpack-dev-server)
         if(self.server) {
-            // Log errors
-            self.server.on('error', function (err) {
-                console.log(err.toString());
-            });
-            // Trigger exit if Apache closes
-            self.server.on('close', function () {
-                console.log('Apache stopped.');
-                process.exit(0);
-            });
             // Start Apache
             console.log('Starting Apache...');
             self.server.listen(self.port, self.hostname, function() {
