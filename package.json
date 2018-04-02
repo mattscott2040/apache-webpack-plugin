@@ -1,6 +1,6 @@
 {
   "name": "apache-webpack-plugin",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Start Apache via webpack-dev-server.",
   "main": "index.js",
   "repository": {
