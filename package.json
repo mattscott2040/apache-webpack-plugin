@@ -13,6 +13,6 @@
   "author": "Matt Scott",
   "license": "ISC",
   "dependencies": {
-    "apache-bridge": "^0.1.4"
+    "apache-bridge": "^0.3.0"
   }
 }
